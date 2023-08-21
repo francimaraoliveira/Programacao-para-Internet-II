@@ -1,18 +1,42 @@
 import { Injectable } from '@nestjs/common';
 
-@Injectable()
-export class AppService {
-  getHello(): string {
-    return 'Hello World!';
-  }
 
-  obterRegistrosIMC(): void {
-    console.log('obterRegistrosIMC()');
-  }
+export interface Produto {
+  nome: string;
+  status: string;
+  destinacao: string;
+  taxaRentabilidade: number;
+  prazo: number;
+  taxaAdm: number;
+  vencimento: Date;
 }
 
-/* export class CalcularIMCInput {
-  private nome: string;
-  private peso: number;
-  private altura: number;
-} */
+@Injectable()
+export class AppService {
+  private _products: Produtos;
+
+  constructor() {
+    this._products = new Produtos();
+  }
+
+  addProduct(input: Produto): void {
+    this._products.addNewProduct(input);
+  }
+
+  listProducts(): void {
+    console.log(this._products.getProducts());
+  }
+
+}
+
+class Produtos {
+  private _products: Produto[] = [];
+
+  getProducts(): Produto[] {
+    return this._products;
+  }
+
+  addNewProduct(product: Produto): void {
+    this._products.push(product);
+  }
+}
