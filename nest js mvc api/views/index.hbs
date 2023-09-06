@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/coin-794.svg" type="image/x-icon">
+    <title>Investimentos de renda fixa</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formulário de Investimentos de Renda Fixa</h1>
+        <form class="form-investimento">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome">
+
+            <label for="status">Status (Disponível / Indisponível)</label>
+            <input type="text" id="status" name="status" placeholder="Status">
+
+            <label for="destinacao">Destinação</label>
+            <input type="text" id="destinacao" name="destinacao" placeholder="Destinação">
+
+            <label for="taxa-rent">Taxa de Rentabilidade (1% a 20%)</label>
+            <input type="number" id="taxa-rent" name="taxa-rent" placeholder="Taxa de rentabilidade">
+
+            <label for="prazo">Prazo para Realização (meses)</label>
+            <input type="number" id="prazo" name="prazo" placeholder="Prazo para realização">
+
+            <label for="taxa-adm">Taxa de Administração</label>
+            <input type="number" id="taxa-adm" name="taxa-adm" placeholder="Taxa de administração">
+
+            <label for="vencimento">Data de Vencimento</label>
+            <input type="date" id="vencimento" name="vencimento">
+
+            <div class="buttons-group">
+                <input formaction="add" formmethod="post" type="submit" value="Adicionar">
+                <input formaction="list" formmethod="get" type="submit" value="Listar">
+                <input formaction="remove" formmethod="post" type="submit" value="Remover">
+                <input formaction="change-status" formmethod="post" type="submit" value="Mudar status">
+            </div>
+        </form>
+    </div>
+        
+</body>
+</html>
